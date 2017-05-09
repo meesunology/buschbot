@@ -1,13 +1,24 @@
-import os
-import time
-from slackclient import SlackClient
+var Botkit;
+var controller;
+var bot;
 
-#buschbot's ID as an environment variable
-BOT_ID = os.environ.get("BOT_ID")
+var auth = require('./reference/auth.js');
 
-#constants 
-AT_BOT = "<@" + BOT_ID + ">"
-EXAMPLE_COMMAND = "do"
+function Initialize(){
+    Botkit = require('./node_modules/botkit/lib/Botkit.js');
+    controller = Botkit.slackbot({});
+    bot = controller.spawn({
+        token: auth.slackbot
+    }).startRTM();
 
-#instantiate Slack & Twilio clients
-slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
+    //have menus
+}
+
+
+
+function ShowHelp(bot, message){
+    //bot.reply(message, "x");
+}
+
+
+Initialize();
