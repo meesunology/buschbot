@@ -11,29 +11,16 @@ function Initialize(){
         token: auth.slackbot
     }).startRTM();
 
-    controller.hears(['closing', 'close'], 'direct_message,direct_mention,mention', function(bot, message) {
-   		if (controller.hears['arc', 'lsm', 'best', 'kessler','rbhs'], 'direct_message,direct_mention,mention', function(bot, message)) {
-   			bot.api.reactions.add({
-        		timestamp: message.ts,
-        		channel: message.channel,
-        		name: 'happyalbert',
-    		}, function(err, res) {
-       			if (err) {
-            		bot.botkit.log('Failed to add emoji reaction :(', err);
-        		}
-    		});
-    	} else {
-    		bot.api.reactions.add({
-        		timestamp: message.ts,
-        		channel: message.channel,
-        		name: 'cactus',
-    		}, function(err, res) {
-       			if (err) {
-            		bot.botkit.log('Failed to add emoji reaction :(', err);
-        		}
-    		});
-
-    	}
+	controller.hears(['opening', 'open'] && ['arc', 'ARC'], 'direct_message,direct_mention,mention', function(bot, message) {
+    	bot.api.reactions.add({
+    	    timestamp: message.ts,
+        	channel: message.channel,
+        	name: 'cactus',
+    	}, function(err, res) {
+        	if (err) {
+        	    bot.botkit.log('Failed to add emoji reaction :(', err);
+        	}
+   		});
 	});
 }
 
