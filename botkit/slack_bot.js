@@ -63,8 +63,9 @@ This bot demonstrates many of the core features of Botkit:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+var auth = require('./reference/auth.js');
 
-if (!process.env.token) {
+if (!auth.slackbot) {
     console.log('Error: Specify token in environment');
     process.exit(1);
 }
