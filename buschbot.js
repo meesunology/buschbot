@@ -1,6 +1,7 @@
 var Botkit;
 var controller;
 var bot;
+var refer;
 
 var auth = require('./reference/auth.js');
 
@@ -11,16 +12,16 @@ function Initialize(){
         token: auth.slackbot
     }).startRTM();
 
+    var client = new XMLHttpRequest();
+
 	controller.hears(['opening', 'open'] && ['arc', 'ARC'], 'direct_message,direct_mention,mention', function(bot, message) {
-    	bot.api.reactions.add({
-    	    timestamp: message.ts,
-        	channel: message.channel,
-        	name: 'cactus',
-    	}, function(err, res) {
-        	if (err) {
-        	    bot.botkit.log('Failed to add emoji reaction :(', err);
-        	}
-   		});
+		var option = './responses/arcOpening.txt';
+		client.open('GET', option);
+		client.onreadystatechange = function() {
+			alert(client.responseText);
+		}
+		client.send();
+    	bot.reply()
 	});
 }
 

@@ -1,1 +1,9 @@
 To Open ARC:
+	Supervisor is present to un-lock the alarm.
+		If there is no supervisor present: call the supervisor on duty!
+	Ensure that the lab is ready for patrons when opening.
+		Check on printers: paper is loaded, no error messages, ready light on...
+		Turn on TV monitor display if no one else has
+	When it is time to open (8:15am, 11:00am), be sure to bring out the carpet and the whiteboard. 
+		During this time the front two doors into the lab should also be hexed opened with the allen key attached to the consultant magnetic.
+		
