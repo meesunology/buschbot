@@ -12,15 +12,17 @@ function Initialize(){
         token: auth.slackbot
     }).startRTM();
 
-    var client = new XMLHttpRequest();
+    refer = require('./responses');
+
+    var fs = require('fs')
+	fs.readFile(filename, 'utf8', function(err, data) {
+  		if (err) throw err;
+  		console.log('OK: ' + filename);
+  		console.log(data)
+	});
 
 	controller.hears(['opening', 'open'] && ['arc', 'ARC'], 'direct_message,direct_mention,mention', function(bot, message) {
-		var option = './responses/arcOpening.txt';
-		client.open('GET', option);
-		client.onreadystatechange = function() {
-			alert(client.responseText);
-		}
-		client.send();
+
     	bot.reply()
 	});
 }
