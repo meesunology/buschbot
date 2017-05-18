@@ -12,18 +12,20 @@ function Initialize(){
         token: auth.slackbot
     }).startRTM();
 
-    refer = require('./responses');
+    controller.hears(['opening', 'open'] && ['arc', 'ARC'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'sun_with_face',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
 
-    var fs = require('fs')
-	fs.readFile(filename, 'utf8', function(err, data) {
-  		if (err) throw err;
-  		console.log('OK: ' + filename);
-  		console.log(data)
-	});
+      bot.reply()
+    });
 
-	controller.hears(['opening', 'open'] && ['arc', 'ARC'], 'direct_message,direct_mention,mention', function(bot, message) {
-
-    	bot.reply()
 	});
 }
 
