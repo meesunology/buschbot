@@ -152,18 +152,46 @@ function Initialize(){
       bot.reply(message, 'To find out How to Hex Doors, Go Here: https://sites.google.com/a/scarletmail.rutgers.edu/busch-consultant-wiki/shift-duties-and-how-to-s/hexing-arc-lab-doors');
     });
 
-    controller.hears(['', ''], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['Busch staff page', 'staff page'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
-        name: 'wrench',
+        name: 'page_facing_up',
         }, function(err, res) {
           if (err) {
             bot.botkit.log('Failed to add emoji reaction :(', err);
           }
       });
       
-      bot.reply(message, 'To find out How to Hex Doors, Go Here: https://sites.google.com/a/scarletmail.rutgers.edu/busch-consultant-wiki/shift-duties-and-how-to-s/hexing-arc-lab-doors');
+      bot.reply(message, 'Here is the link to our staff page!: https://supportcenter.oit-nbcs.rutgers.edu/content/busch-consultants-staff-page');
+    });
+
+    controller.hears(['pts', 'performance tracking system'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'helicopter',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'Here is PTS: https://sc-apps.rutgers.edu/pts/');
+    });
+
+    controller.hears(['locks', 'lock combo', 'lock'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'lock',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'The LSM Printer Locks and BSC Printer Locks are the last four digits of the Busch Supervisor Phone Number. The Locks for ARC Cabinets is LSM!');
     });
 }
 
