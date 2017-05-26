@@ -193,6 +193,8 @@ function Initialize(){
       
       bot.reply(message, 'The LSM Printer Locks and BSC Printer Locks are the last four digits of the Busch Supervisor Phone Number. The Locks for ARC Cabinets is LSM!');
     });
+
+    
 }
 
 
