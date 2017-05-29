@@ -194,7 +194,89 @@ function Initialize(){
       bot.reply(message, 'The LSM Printer Locks and BSC Printer Locks are the last four digits of the Busch Supervisor Phone Number. The Locks for ARC Cabinets is LSM!');
     });
 
-    
+    controller.hears(['lost and found', 'L&F'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'closed_umbrella',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'ARC, BEST, and Kessler save and log their Lost and Found items. LSM Lost and Found items are returned and given tot he front desk on the first floor. The Lost and Found Page can be found on the Staff Page: https://supportcenter.oit-nbcs.rutgers.edu/content/busch-consultants-staff-page');
+    });
+
+    controller.hears(['slack'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'slack',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'SILLY! You have slack open, but our Slack page is: https://ru-oit-busch.slack.com/messages');
+    });
+
+    controller.hears(['resnet', 'residential network', 'dispatch'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'printer',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'Interested in ResNet? https://supportcenter.oit-nbcs.rutgers.edu/content/applying-resnet-dispatch');
+    });
+
+    controller.hears(['arc closing checklist'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'crescent_moon',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'ARC Closing Checklist: https://drive.google.com/file/d/0B3swaY7rL_t1dUVKOTVSd1ZLMTg/view');
+    });
+
+    controller.hears(['best closing checklist'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'crescent_moon',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'BEST Closing Checklist: https://drive.google.com/file/d/0B5Wer41R0meKandwZGpvMmpkSms/view');
+    });
+
+    controller.hears(['paycheck', 'my.rutgers', 'my rutgers', 'pay check', 'direct deposit'], 'direct_message,direct_mention,mention', function(bot, message) {
+      bot.api.reactions.add({
+        timestamp: message.ts,
+        channel: message.channel,
+        name: 'moneybag',
+        }, function(err, res) {
+          if (err) {
+            bot.botkit.log('Failed to add emoji reaction :(', err);
+          }
+      });
+      
+      bot.reply(message, 'You can find settings for your Direct Deposit & Paycheck Stubs in my.rutgers.edu.');
+    });
 }
 
 
