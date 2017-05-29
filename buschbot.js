@@ -283,6 +283,7 @@ function Initialize(){
 
 function ShowHelp(bot, message){
     //bot.reply(message, "x");
+    bot.reply(message, "You can ask Buschbot any keywords like \'ARC Closing Checklist' or \'staff page' to find information regarding either.\nJokes, Puns, & Riddles coming soon.");
 }
 
 
