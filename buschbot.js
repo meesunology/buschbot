@@ -13,7 +13,7 @@ function Initialize(){
     }).startRTM();
 
     //Opening ARC
-    controller.hears(['opening arc', 'open arc'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['opening arc', 'open arc', 'arc opening', 'arc open'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -28,7 +28,7 @@ function Initialize(){
     });
 
     //Closing ARC
-    controller.hears(['closing arc', 'close arc'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['closing arc', 'close arc', 'arc closing', 'arc close'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -43,7 +43,7 @@ function Initialize(){
     });
 
     //Opening BEST
-    controller.hears(['opening best', 'open best'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['opening best', 'open best', 'best open', 'best opening'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -58,7 +58,7 @@ function Initialize(){
     });
 
     //Closing BEST
-    controller.hears(['closing best', 'close best'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['closing best', 'close best', 'best close', 'best closing'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -73,7 +73,7 @@ function Initialize(){
     });
 
     //Opening LSM
-    controller.hears(['opening lsm', 'open lsm'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['opening lsm', 'open lsm', 'lsm opening', 'lsm open'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -88,7 +88,7 @@ function Initialize(){
     });
 
     //Closing LSM
-    controller.hears(['closing lsm', 'close lsm'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['closing lsm', 'close lsm', 'lsm closing', 'lsm close'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -103,7 +103,7 @@ function Initialize(){
     });
 
     //Opening Kessler, RBHS
-    controller.hears(['opening kessler', 'open kessler', 'open rbhs', 'opening rbhs'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['opening kessler', 'open kessler', 'open rbhs', 'opening rbhs', 'kessler opening', 'kessler open', 'rbhs opening', 'rbhs open'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -114,8 +114,11 @@ function Initialize(){
           }
       });
 
+      bot.reply(message, 'To find out How to Open Kessler, Go Here: https://sites.google.com/a/scarletmail.rutgers.edu/busch-consultant-wiki/rbhs-piscataway-lab/shift-responsibilites#TOC-How-to-Open-Kessler');
+    });
+
     //Closing Kessler, RBHS
-    controller.hears(['closing kessler', 'close kessler', 'closing rbhs', 'close rbhs'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['closing kessler', 'close kessler', 'closing rbhs', 'close rbhs', 'kessler closing', 'kessler close', 'rbhs closing', 'rbhs close'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -161,7 +164,7 @@ function Initialize(){
     });
 
     //PTS Link
-    controller.hears(['pts', 'performance tracking system'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['pts', 'performance tracking system', 'merits', 'merit', 'infraction', 'infract'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -176,7 +179,7 @@ function Initialize(){
     });
 
     //Lock Combo
-    controller.hears(['locks', 'lock combo', 'lock'], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['locks', 'lock combo', 'lock', 'combo'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -281,7 +284,7 @@ function Initialize(){
     });
 
     //
-    controller.hears([' '], 'direct_message,direct_mention,mention', function(bot, message) {
+    controller.hears(['dml wiki', 'dml'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
         channel: message.channel,
@@ -292,8 +295,9 @@ function Initialize(){
           }
       });
       
-      bot.reply(message, ' ');
+      bot.reply(message, 'Any information regarding the DML can be found in the DML wiki: https://sites.google.com/a/scarletmail.rutgers.edu/dml-wiki/ . This can be given out to both patrons and for consultants to use. ');
     });
+
 }
 
 
