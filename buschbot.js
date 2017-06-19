@@ -283,7 +283,7 @@ function Initialize(){
       bot.reply(message, 'You can find settings for your Direct Deposit & Paycheck Stubs in my.rutgers.edu.');
     });
 
-    //
+    //DML Information
     controller.hears(['dml wiki', 'dml'], 'direct_message,direct_mention,mention', function(bot, message) {
       bot.api.reactions.add({
         timestamp: message.ts,
@@ -297,7 +297,6 @@ function Initialize(){
       
       bot.reply(message, 'Any information regarding the DML can be found in the DML wiki: https://sites.google.com/a/scarletmail.rutgers.edu/dml-wiki/ . This can be given out to both patrons and for consultants to use. ');
     });
-
 }
 
 
